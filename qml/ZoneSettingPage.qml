@@ -1,4 +1,4 @@
-import QtQuick 1.1
+import QtQuick 2.0
 
 Item {
     id: zoneSettingPage
@@ -171,7 +171,7 @@ Item {
                     pointSize: 18
                     bold: true
                 }
-                text: qsTr("Loopback") + mainWindow.emptyString
+                text: qsTr("Loopback") + ""
             }
         }
 
@@ -291,7 +291,7 @@ Item {
                         pointSize: 18
                         bold: true
                     }
-                    text: qsTr("Dante name:") + mainWindow.emptyString
+                    text: qsTr("Dante name:") + ""
                 }
             }
 
@@ -338,7 +338,7 @@ Item {
                 id: btnDanteNameOk
                 width: 40
                 height: 40
-                text: qsTr("OK") + mainWindow.emptyString
+                text: qsTr("OK") + ""
             }
         }
 
@@ -361,7 +361,7 @@ Item {
                         pointSize: 18
                         bold: true
                     }
-                    text: qsTr("ChannelNo:") + mainWindow.emptyString
+                    text: qsTr("ChannelNo:") + ""
                 }
             }
 
@@ -404,7 +404,7 @@ Item {
                         pointSize: 18
                         bold: true
                     }
-                    text: qsTr("Subscription:") + mainWindow.emptyString
+                    text: qsTr("Subscription:") + ""
                 }
             }
 
@@ -446,7 +446,7 @@ Item {
                         pointSize: 18
                         bold: true
                     }
-                    text: qsTr("IP&Port:") + mainWindow.emptyString
+                    text: qsTr("IP&Port:") + ""
                 }
             }
 

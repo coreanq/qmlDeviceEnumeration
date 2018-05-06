@@ -1,4 +1,4 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "../"
 import "../functions.js" as Functions
 
@@ -119,27 +119,27 @@ Item {
                 id: btnGroupAdd
                 height: 30
                 width: parent.width
-                text: qsTr("Add") + mainWindow.emptyString
+                text: qsTr("Add") + ""
             }
             Button {
                 id: btnGroupRemove
                 height: 30
                 width: parent.width
-                text: qsTr("Remove") + mainWindow.emptyString
+                text: qsTr("Remove") + ""
             }
 
             Button {
                 id: btnSelAll
                 height: 30
                 width: parent.width
-                text: qsTr("Sel. all") + mainWindow.emptyString
+                text: qsTr("Sel. all") + ""
 
             }
             Button {
                 id: btnDeselAll
                 height: 30
                 width: parent.width
-                text: qsTr("Desel. all") + mainWindow.emptyString
+                text: qsTr("Desel. all") + ""
 
             }
 

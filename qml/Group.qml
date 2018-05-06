@@ -1,4 +1,4 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "functions.js" as Functions
 // 바로 Flipable 로 시작하지 않고 Item 으로 시작하는 이유는
 // GirdView 의 component 로서 parent 가 바뀔수 있기 때문에 root Item 의 Parent 가 바뀌지 않게 하기 위함.
@@ -141,8 +141,8 @@ Item{
                 anchors.fill: parent
                 flipped: group.flipped
 
-                titleText : qsTr("Setting: Group") + mainWindow.emptyString
-                description: qsTr("It can be set group's name") + mainWindow.emptyString
+                titleText : qsTr("Setting: Group") + ""
+                description: qsTr("It can be set group's name") + ""
                 iconSource:  "qrc:/image/setting_group_128.png"
                 name: group.name
                 sourceName: group.source

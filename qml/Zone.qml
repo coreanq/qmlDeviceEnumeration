@@ -1,4 +1,4 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "functions.js" as Functions
 
 // 바로 Flipable 로 시작하지 않고 Item 으로 시작하는 이유는
@@ -381,11 +381,11 @@ Item{
                 deviceType: zone.deviceType
                 flipped: zone.flipped
 
-                titleText : deviceType =="TX" ? qsTr("Setting: Source") + mainWindow.emptyString :
-                                                qsTr("Setting: Zone") + mainWindow.emptyString
+                titleText : deviceType =="TX" ? qsTr("Setting: Source") + "" :
+                                                qsTr("Setting: Zone") + ""
                 description: deviceType == "TX" ?
-                                 qsTr("It can be set device's name." )  + mainWindow.emptyString :
-                                 qsTr("It can be set device's name, loopback.") + mainWindow.emptyString
+                                 qsTr("It can be set device's name." )  + "" :
+                                 qsTr("It can be set device's name, loopback.") + ""
                 iconSource: deviceType == "TX" ?
                                 "qrc:/image/setting_source_128.png" :
                                 "qrc:/image/setting_zone_128.png"

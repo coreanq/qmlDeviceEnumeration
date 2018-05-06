@@ -1,4 +1,4 @@
-import QtQuick 1.1
+import QtQuick 2.0
 
 Item {
     id: navigationWnd
@@ -8,7 +8,7 @@ Item {
     Component.onCompleted:{
         navigationWnd.state = "control"
         imgSize = imgControl.height + txtControl.height;
-        cppInterface.onBtnCheckDeviceInfoClicked();
+//        cppInterface.onBtnCheckDeviceInfoClicked();
     }
 
     Timer {
@@ -66,7 +66,7 @@ Item {
             Text{
                 id: txtControl
                 anchors.horizontalCenter: imgControl.horizontalCenter
-                text: qsTr("CONTROL") + mainWindow.emptyString
+                text: qsTr("CONTROL") + ""
                 color: "black"
                 font.bold: true
             }
@@ -102,7 +102,7 @@ Item {
             }
             Text{
                 anchors.horizontalCenter: imgSetup.horizontalCenter
-                text: qsTr("SETUP") + mainWindow.emptyString
+                text: qsTr("SETUP") + ""
                 color: "black"
                 font.bold: true
             }
@@ -142,7 +142,7 @@ Item {
             Text{
                 id: txtLog
                 anchors.horizontalCenter: imgLog.horizontalCenter
-                text: qsTr("LOG") + mainWindow.emptyString
+                text: qsTr("LOG") + ""
                 color: "black"
                 font.bold: true
             }
@@ -178,7 +178,7 @@ Item {
             }
             Text{
                 anchors.horizontalCenter: imgHelp.horizontalCenter
-                text: qsTr("HELP") + mainWindow.emptyString
+                text: qsTr("HELP") + ""
                 color: "black"
                 font.bold: true
             }
@@ -209,7 +209,7 @@ Item {
             Text{
                 id: txtZoomIn
                 anchors.horizontalCenter: imgZoomIn.horizontalCenter
-                text: qsTr("ZOOM IN") + mainWindow.emptyString
+                text: qsTr("ZOOM IN") + ""
                 color: "black"
                 font.bold: true
             }
@@ -240,7 +240,7 @@ Item {
             Text{
                 id: txtZoomOut
                 anchors.horizontalCenter: imgZoomOut.horizontalCenter
-                text: qsTr("ZOOM OUT") + mainWindow.emptyString
+                text: qsTr("ZOOM OUT") + ""
                 color: "black"
                 font.bold: true
             }
@@ -282,7 +282,7 @@ Item {
             Text{
                 id: txtReload
                 anchors.horizontalCenter: imgReload.horizontalCenter
-                text: qsTr("RELOAD") + mainWindow.emptyString
+                text: qsTr("RELOAD") + ""
                 color: "black"
                 font.bold: true
             }
@@ -320,22 +320,18 @@ Item {
                 anchors.margins: 10
                 source: "qrc:/image/navigation_check_64.png"
                 smooth: true
-                opacity: mainWindow.language == "Korean" ? 0.5 : 0
+//                opacity: mainWindow.language == "Korean" ? 0.5 : 0
             }
 
             Text{
                 id: txtKorea
                 anchors.top: imgKorea.bottom
                 anchors.horizontalCenter: imgKorea.horizontalCenter
-                text: qsTr("Korean") + mainWindow.emptyString
+                text: qsTr("Korean") + ""
                 color: "black"
-                font.bold: {
-                    if ( mainWindow.language  == "Korean")
-                        return true;
-                    else
-                        return false;
-                }
-            }
+                font.bold: true
+           }
+
         }
         Item{
             width: parent.width /2 - 10
@@ -360,21 +356,16 @@ Item {
                 anchors.margins: 10
                 source: "qrc:/image/navigation_check_64.png"
                 smooth: true
-                opacity: mainWindow.language == "English" ? 0.5 : 0
+//                opacity: mainWindow.language == "English" ? 0.5 : 0
             }
 
             Text{
                 id: txtEnglish
                 anchors.top: imgEnglish.bottom
                 anchors.horizontalCenter: imgEnglish.horizontalCenter
-                text: qsTr("English") + mainWindow.emptyString
+                text: qsTr("English") + ""
                 color: "black"
-                font.bold: {
-                    if ( mainWindow.language == "English")
-                        return true;
-                    else
-                        return false;
-                }
+                font.bold: true
             }
         }
 
@@ -409,7 +400,7 @@ Item {
                name: "controlScript"
                script: {
 //                   console.log("state: " + state.toString()  );
-                   cppInterface.onBtnCheckDeviceInfoClicked();
+//                   cppInterface.onBtnCheckDeviceInfoClicked();
                    viewRegisteredTxZones.mode = "control";
                }
            }

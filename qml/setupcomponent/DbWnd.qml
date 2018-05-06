@@ -1,4 +1,4 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "../"
 
 Item {
@@ -74,20 +74,14 @@ Item {
 
 
     // 초기 db 에서 로딩된 값을 qml 로 읽어 오기 위함.
-    Connections {
-        target: cppInterface
-        onSgServerIPChanged:{
-//               console.debug("serverip changed");
-            txtServerIP.item.text = str;
-        }
-    }
+//    Connections {
+//        target: cppInterface
+//        onSgServerIPChanged:{
+////               console.debug("serverip changed");
+//            txtServerIP.item.text = str;
+//        }
+//    }
 
-    Connections {
-        target:mainWindow
-        onSgLanguageChanged: {
-            lblServerIP.item.text = qsTr("Server IP");
-        }
-    }
 
     Connections {
         target: btnDBDownload;
@@ -188,7 +182,7 @@ Item {
                     font.pointSize: 12
                     font.bold: true
                     wrapMode : Text.WordWrap
-                    text: qsTr("Select the network interface(for primary interface) that the s-con will use to communicate with other DAC-288 devices:") + mainWindow.emptyString
+                    text: qsTr("Select the network interface(for primary interface) that the s-con will use to communicate with other DAC-288 devices:") + ""
                 }
                 Image{
                     id: imgRefresh
@@ -250,7 +244,7 @@ Item {
             Button {
                 id: btnDBDownload
                 focus: true
-                text: qsTr("DB Download from server") + mainWindow.emptyString
+                text: qsTr("DB Download from server") + ""
 
                 height: 50
                 width: parent.width - parent.spacing
@@ -269,7 +263,7 @@ Item {
                     width: parent.width /3  - parent.spacing
                     sourceComponent: comLblTxt
                     onLoaded:{
-                        item.text = qsTr("Server IP") + mainWindow.emptyString
+                        item.text = qsTr("Server IP") + ""
                     }
                 }
                 // serverip 입력창.
@@ -279,7 +273,7 @@ Item {
                     width: parent.width /3 * 2  - parent.spacing
                     sourceComponent: comTxtInput
                     onLoaded:{
-                        txtServerIP.item.validator =  cppInterface.ipValidator();
+//                        txtServerIP.item.validator =  cppInterface.ipValidator();
                     }
 
 
@@ -295,14 +289,14 @@ Item {
                 Button {
                     id: btnDbManagement
                     width: parent.width / 2  - parent.spacing
-                    text: qsTr("DB Management") + mainWindow.emptyString
+                    text: qsTr("DB Management") + ""
                 }
 
                 // 로그 확인 버튼
                 Button {
                     id: btnLogShow
                     width: parent.width / 2  - parent.spacing
-                    text: qsTr("Log View") + mainWindow.emptyString
+                    text: qsTr("Log View") + ""
                 }
             }
 
@@ -314,13 +308,13 @@ Item {
                 font.pointSize: 12
                 color: "red"
                 width: parent.width
-                text: qsTr("It is for a computer that the database is installed. Clicking of this button will initialize the data and database setting.") + mainWindow.emptyString
+                text: qsTr("It is for a computer that the database is installed. Clicking of this button will initialize the data and database setting.") + ""
             }
             // DB initialize button
             Button {
                 id: btnDBInitialize
                 focus: true
-                text: qsTr("DB Initialize") + mainWindow.emptyString
+                text: qsTr("DB Initialize") + ""
                 height: 50
                 width: parent.width - parent.spacing
             }
@@ -333,14 +327,14 @@ Item {
                 Button {
                     id: btnDBSave
                     width: parent.width / 2  - parent.spacing
-                    text: qsTr("DB Backup") + mainWindow.emptyString
+                    text: qsTr("DB Backup") + ""
                 }
 
                 // DB Load 버튼
                 Button {
                     id: btnDBLoad
                     width: parent.width / 2  - parent.spacing
-                    text: qsTr("DB Restore") + mainWindow.emptyString
+                    text: qsTr("DB Restore") + ""
                 }
             }
 

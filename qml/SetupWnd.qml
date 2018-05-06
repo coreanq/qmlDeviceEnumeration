@@ -1,4 +1,4 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "setupcomponent"
 import "functions.js" as Functions
 
@@ -124,7 +124,7 @@ Item {
            Button {
                id: btnSourceSetting
                focus: true
-               text: qsTr("Source") + mainWindow.emptyString
+               text: qsTr("Source") + ""
                anchors.left: parent.left
                anchors.right: parent.right
                onClicked:{
@@ -146,7 +146,7 @@ Item {
            Button {
                id: btnZoneSetting
                focus: true
-               text: qsTr("Zone/Group") + mainWindow.emptyString
+               text: qsTr("Zone/Group") + ""
                anchors.left: parent.left
                anchors.right: parent.right
                onClicked:{
@@ -168,7 +168,7 @@ Item {
            Button {
                id: btnEtcSetting
                focus: true
-               text: qsTr("Other setting") + mainWindow.emptyString
+               text: qsTr("Other setting") + ""
                anchors.left: parent.left
                anchors.right: parent.right
                onClicked:{
@@ -206,7 +206,7 @@ Item {
                    Text {
                        id: textEdit
                        anchors.centerIn: parent
-                       text: qsTr("Detail setting") + mainWindow.emptyString
+                       text: qsTr("Detail setting") + ""
                        font {
                            pointSize: 14
                            bold: true
@@ -234,7 +234,7 @@ Item {
                            pointSize: 14
                            bold: true
                        }
-                       text: qsTr("OFF") + mainWindow.emptyString
+                       text: qsTr("OFF") + ""
                    }
                }
 
@@ -274,7 +274,7 @@ Item {
                            pointSize: 14
                            bold: true
                        }
-                       text: qsTr("ON") + mainWindow.emptyString
+                       text: qsTr("ON") + ""
                    }
                }
            }
@@ -292,7 +292,7 @@ Item {
                    Text {
                        id: textEdit2
                        anchors.centerIn: parent
-                       text: qsTr("Virtual Keyboard") + mainWindow.emptyString
+                       text: qsTr("Virtual Keyboard") + ""
                        font {
                            pointSize: 14
                            bold: true
@@ -322,7 +322,7 @@ Item {
                            pointSize: 14
                            bold: true
                        }
-                       text: qsTr("OFF") + mainWindow.emptyString
+                       text: qsTr("OFF") + ""
                    }
                }
 
@@ -365,7 +365,7 @@ Item {
                            pointSize: 14
                            bold: true
                        }
-                       text: qsTr("ON") + mainWindow.emptyString
+                       text: qsTr("ON") + ""
                    }
                }
            }
@@ -421,7 +421,7 @@ Item {
            StateChangeScript {
                name: "sourceSettingScript"
                script: {
-                   cppInterface.showVirtualKeyboard(false);
+//                   cppInterface.showVirtualKeyboard(false);
 //                   console.log("state: " + state.toString())
                }
            }

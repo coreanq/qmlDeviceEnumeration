@@ -30,7 +30,7 @@
 * THE POSSIBILITY OF SUCH DAMAGE.”
 */
 
-import QtQuick 1.1
+import QtQuick 2.0
 
 /**
 * This item provides a secure slideswitch that is only activated when slid

@@ -1,4 +1,4 @@
-import QtQuick 1.1
+import QtQuick 2.0
 //Rectangle {
 //    id: shine
 //    radius: parent.radius - 1

@@ -1,10 +1,20 @@
-import QtQuick 1.1
-import QtWebKit 1.0
-import "functions.js" as Functions
+import QtQuick 2.9
+import QtQuick.Controls 2.2
+import QtQuick.Window 2.3
+//import "functions.js" as Functions
 
-Item{
+Window{
     id: mainWnd
     // zone, source, txRegisteredzone 의 크기를 결정하기 위함.
+    visible: true
+    width: 1024
+    height: 640
+    Rectangle {
+        anchors.fill: parent
+        color: "black"
+        opacity: 0.1
+    }
+
 
     property int pressDelay : 50 // flick 와 click 동작을 모두 구현하기 위함
     property int currentCellWidth: 240
@@ -20,10 +30,10 @@ Item{
 
     Component.onCompleted: {
         var size;
-        size = cppInterface.zoneRectSize();
+//        size = cppInterface.zoneRectSize();
 //        console.debug("size x " + size.x + " size y " + size.y );
-        currentCellWidth = size.x;
-        currentCellHeight = size.y;
+//        currentCellWidth = size.x;
+//        currentCellHeight = size.y;
     }
 
     onCurrentCellWidthChanged: {
@@ -100,9 +110,8 @@ Item{
             }
         }
         GroupBox{
-            baseColor: groupBoxColor
             anchors.fill: parent
-            name: qsTr("Menu") + mainWindow.emptyString
+            title: qsTr("Menu") + ""
         }
     }
 
@@ -129,9 +138,8 @@ Item{
         }
 
         GroupBox{
-            baseColor: groupBoxColor
             anchors.fill: parent
-            name: qsTr("Registered Source") + mainWindow.emptyString
+            label: qsTr("Registered Source") + ""
         }
     }
 
@@ -147,7 +155,6 @@ Item{
             anchors.margins: mainWnd.anchorsMargins
         }
         GroupBox{
-            baseColor: groupBoxColor
             anchors.fill: parent
         }
     }
@@ -176,9 +183,8 @@ Item{
             scale : mainWnd.scale
         }
         GroupBox{
-            baseColor: groupBoxColor
             anchors.fill: parent
-            name: qsTr("Control") + mainWindow.emptyString
+            title: qsTr("Control") + ""
         }
     }
 
@@ -206,9 +212,8 @@ Item{
             scale : mainWnd.scale
         }
         GroupBox{
-            baseColor: groupBoxColor
             anchors.fill: parent
-            name: qsTr("Setup") + mainWindow.emptyString
+            title: qsTr("Setup") + ""
         }
     }
 
@@ -226,7 +231,6 @@ Item{
         }
 
         GroupBox{
-            baseColor: groupBoxColor
             anchors.fill: parent
         }
 
@@ -242,10 +246,6 @@ Item{
         anchors.bottom: parent.bottom
 
 
-        ScrollBar {
-            target: webViewBase
-            z: webView.z + 1
-        }
 
         Row{
             spacing: 20
@@ -312,31 +312,23 @@ Item{
             anchors.margins: mainWnd.anchorsMargins
             pressDelay: mainWnd.pressDelay
 
-            contentWidth: Math.max(parent.width,webView.width)
-            contentHeight: Math.max(parent.height,webView.height)
+//            contentWidth: Math.max(parent.width,webView.width)
+//            contentHeight: Math.max(parent.height,webView.height)
 
-            Connections {
-                target: mainWindow
-                onSgLanguageChanged: {
-                    if( mainWindow.language == "Korean" )
-                        webView.url = "file:///" + korManualFullPath ;
-                    else
-                        webView.url = "file:///" + EngManualFullPath ;
-                }
-            }
+//            Connections { target: mainWindow
+//                onSgLanguageChanged: {
+//                    if( mainWindow.language == "Korean" )
+//                        webView.url = "file:///" + korManualFullPath ;
+//                    else
+//                        webView.url = "file:///" + EngManualFullPath ;
+//                }
+//            }
 
 
-            WebView {
-                id: webView
-                transformOrigin: Item.TopLeft
-                contentsScale: 1
-                smooth: false // We don't want smooth scaling, since we only scale during (fast) transitions
-            }
         }
         GroupBox{
-            baseColor: groupBoxColor
             anchors.fill: parent
-            name: qsTr("Help") + mainWindow.emptyString
+            title: qsTr("Help") + ""
         }
     }
 }

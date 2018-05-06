@@ -30,7 +30,7 @@
 * THE POSSIBILITY OF SUCH DAMAGE.”
 */
 
-import QtQuick 1.1
+import QtQuick 2.0
 
 /**
 * This element represents a slider with a scale and a knob that sets a value

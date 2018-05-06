@@ -1,4 +1,4 @@
-import QtQuick 1.1
+import QtQuick 2.0
 
 Item {
     id: groupSettingPage
@@ -139,7 +139,7 @@ Item {
                         pointSize: 18
                         bold: true
                     }
-                    text: qsTr("Group name:") + mainWindow.emptyString
+                    text: qsTr("Group name:") + ""
                 }
             }
 
@@ -182,7 +182,7 @@ Item {
                 id: btnGroupNameOk
                 width: 40
                 height: 40
-                text: qsTr("OK") + mainWindow.emptyString
+                text: qsTr("OK") + ""
             }
         }
 
@@ -209,7 +209,7 @@ Item {
                         pointSize: 18
                         bold: true
                     }
-                    text: qsTr("Source:") + mainWindow.emptyString
+                    text: qsTr("Source:") + ""
                 }
             }
 

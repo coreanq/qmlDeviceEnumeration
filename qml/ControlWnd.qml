@@ -1,4 +1,4 @@
-import QtQuick 1.1
+import QtQuick 2.0
 import "setupcomponent"
 
 Item {
@@ -86,17 +86,17 @@ Item {
                Button{
                    id: btnSubscriptionOn
                    width: parent.width /2 - parent.spacing
-                   text: qsTr("Subs. on") + mainWindow.emptyString
+                   text: qsTr("Subs. on") + ""
                }
                Button {
                    id: btnSubscriptionOff
                    width: parent.width /2 - parent.spacing
-                   text: qsTr("Subs. off") + mainWindow.emptyString
+                   text: qsTr("Subs. off") + ""
                }
            }
            Button {
                id: btnCheckStatus
-               text: qsTr("Check status") + mainWindow.emptyString
+               text: qsTr("Check status") + ""
                width: parent.width - parent.spacing
            }
 
@@ -105,12 +105,12 @@ Item {
                width: parent.width
                Button {
                    id: btnSelAll
-                   text: qsTr("Sel. all") + mainWindow.emptyString
+                   text: qsTr("Sel. all") + ""
                    width: parent.width /2 - parent.spacing
                }
                Button {
                    id: btnDeselAll
-                   text: qsTr("Desel. all") + mainWindow.emptyString
+                   text: qsTr("Desel. all") + ""
                    width: parent.width /2 - parent.spacing
                }
            }
@@ -124,7 +124,7 @@ Item {
 
            Button {
                id: btnLoopbackPanel
-               text: qsTr("Loopback panel") + mainWindow.emptyString
+               text: qsTr("Loopback panel") + ""
                width: parent.width - parent.spacing
            }
        }
@@ -180,12 +180,12 @@ Item {
 
                Button {
                   id: btnLoopbackOn
-                  text: qsTr("Loopback on") + mainWindow.emptyString
+                  text: qsTr("Loopback on") + ""
                   width: parent.width /2
                }
                Button {
                    id: btnLoopbackOff
-                   text: qsTr("Loopback off") + mainWindow.emptyString
+                   text: qsTr("Loopback off") + ""
                    width: parent.width /2
                }
            }
@@ -198,8 +198,8 @@ Item {
                backImgWidth: 600
                leftBarrelModel: qmlModelRxZones
                rightBarrelModel: qmlModelRegisteredTxChannels
-               rightCaption: qsTr("Destination") + mainWindow.emptyString
-               leftCaption: qsTr("Source") + mainWindow.emptyString
+               rightCaption: qsTr("Destination") + ""
+               leftCaption: qsTr("Source") + ""
                leftDelegate: Text {
 
                    anchors.left: parent.left
