@@ -37,7 +37,7 @@ Item {
         Column{
             Image {
                 id: imgControl
-                source: "qrc:/image/navigation_control_64.png"
+                source: Constant.imgPath + "navigation_control_64.png"
                 smooth: true
                 MouseArea{
                     anchors.fill: parent

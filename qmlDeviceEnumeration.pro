@@ -1,5 +1,5 @@
 QT += quick
-CONFIG += c++11
+CONFIG += c++11 v-play
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
@@ -11,6 +11,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+
+Debug {
+    #DEPLOYMENTFOLDERS 해당 리소스를 showdow 빌드 디렉토리로 qrc 로 컴파일 하지 않고 복사함
+    qmlFolder.source = qml
+    DEPLOYMENTFOLDERS += qmlFolder
+
+    assetsFolder.source = image
+    DEPLOYMENTFOLDERS += assetsFolder
+    RESOURCES += resource.qrc
+}
+Release{
+    RESOURCES += resource.qrc
+}
 
 SOURCES += \
         main.cpp \
@@ -60,7 +73,8 @@ DISTFILES += \
     qml/setupcomponent/ZoneWnd.qmlc \
     qml/setupcomponent/DbWnd.qml \
     qml/setupcomponent/SourceWnd.qml \
-    qml/setupcomponent/ZoneWnd.qml
+    qml/setupcomponent/ZoneWnd.qml \
+    image/*.png
 
 HEADERS += \
     qmlstandarditemmodel.h \
