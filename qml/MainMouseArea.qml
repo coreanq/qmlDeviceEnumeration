@@ -3,12 +3,14 @@ import QtQuick 1.1
 MouseArea{
 
     id: mainMouseArea
+    visible: false
 
     property bool enabled: true
     property string flickDirection
     property int    oldMouseX : 0
 
     anchors.fill: parent
+    
 
     drag.target:  {
         if( mainWnd.state == "control" ){

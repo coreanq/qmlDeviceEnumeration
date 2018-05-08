@@ -33,11 +33,11 @@ void QmlInterface::initQmlModel()
 }
 
 
-// browsing À¸·Î ºÎÅÍ °Ë»öµÈ Ã¤³Î Á¤º¸¸¦ ÀúÀåÇÔ.
+// browsing ìœ¼ë¡œ ë¶€í„° ê²€ìƒ‰ëœ ì±„ë„ ì •ë³´ë¥¼ ì €ì¥í•¨.
 void QmlInterface::initQmlZonesModel()
 {
     QStringList headerData;
-    // 1¹øÂ° value ¿¡ column ÀÌ¸§ÀÌ Á¸ÀçÇÔ.
+    // 1ë²ˆì§¸ value ì— column ì´ë¦„ì´ ì¡´ì¬í•¨.
 //        headerData << query.value(1).toString();
 
     m_qmlModelRegisteredTxChannels->setHorizontalHeaderLabels(headerData);
@@ -58,18 +58,18 @@ void QmlInterface::initQmlZonesModel()
 }
 
 
-// remotedb ¿¡¼­ ¾ò¾î¿Â groups µ¥ÀÌÅÍ¸¦ qmlModelGroups ·Î º¯È¯
+// remotedb ì—ì„œ ì–»ì–´ì˜¨ groups ë°ì´í„°ë¥¼ qmlModelGroups ë¡œ ë³€í™˜
 void QmlInterface::initQmlGroupsModel()
 {
     QStringList headerData;
-    // 1¹øÂ° value ¿¡ column ÀÌ¸§ÀÌ Á¸ÀçÇÔ.
+    // 1ë²ˆì§¸ value ì— column ì´ë¦„ì´ ì¡´ì¬í•¨.
 //        headerData << query.value(1).toString();
     m_qmlModelGroups->setHorizontalHeaderLabels(headerData);
     m_qmlModelGroups->applyRoles();
 
 
     ////////////////////////////////////////////////////////////////////////////
-    // remote ¼Ò½º Á¦°Å ÇÏ°í, local ·Î ¸¸µé¾î Áø µ¥ÀÌÅÍ´Â Áö¿ìÁö ¾Êµµ·Ï ÇÔ.
+    // remote ì†ŒìŠ¤ ì œê±° í•˜ê³ , local ë¡œ ë§Œë“¤ì–´ ì§„ ë°ì´í„°ëŠ” ì§€ìš°ì§€ ì•Šë„ë¡ í•¨.
     QList <int> rowIndexes;
     QList <QStandardItem*> sourceItems;
     sourceItems = m_qmlModelGroups->findItems("REMOTE", Qt::MatchExactly, INDEX_QML_GROUPS_SOURCE );
@@ -79,7 +79,7 @@ void QmlInterface::initQmlGroupsModel()
         rowIndexes << item->row();
     }
 
-    // desending order ·Î sort
+    // desending order ë¡œ sort
     qSort(rowIndexes.begin(), rowIndexes.end() , qGreater<int> () );
 
     foreach (int row, rowIndexes )
@@ -88,7 +88,7 @@ void QmlInterface::initQmlGroupsModel()
     }
 
     QList <QStandardItem*> items;
-    //// LOCAL Group Ãß°¡
+    //// LOCAL Group ì¶”ê°€
     items.clear();
 
 
@@ -157,7 +157,7 @@ void QmlInterface::initQmlNetworkInterfacesModel()
                   "NetworkIndex" <<
                   "Selected";
 
-    // 1¹øÂ° value ¿¡ column ÀÌ¸§ÀÌ Á¸ÀçÇÔ.
+    // 1ë²ˆì§¸ value ì— column ì´ë¦„ì´ ì¡´ì¬í•¨.
     m_qmlModelNetworkInterfaces->setHorizontalHeaderLabels(headerData);
     m_qmlModelNetworkInterfaces->applyRoles();
 
@@ -165,13 +165,13 @@ void QmlInterface::initQmlNetworkInterfacesModel()
 
 void QmlInterface::onAddTxChannel(QString danteName, QString channelNo)
 {
-    // browsing ¿¡¼­´Â Ã¤³Î Á¤º¸°¡ tx ¸¸ ¿ÀÁö¸¸ ÀÌ°É Åä´ë·Î rx/ tx Ã¤³Î ±¸¼ºÀ» ÇÔ.
+    // browsing ì—ì„œëŠ” ì±„ë„ ì •ë³´ê°€ tx ë§Œ ì˜¤ì§€ë§Œ ì´ê±¸ í† ëŒ€ë¡œ rx/ tx ì±„ë„ êµ¬ì„±ì„ í•¨.
     QString data = "";
     QList <QStandardItem*> items;
     bool isDuplicate =false;
 
 
-    // ÀÌ¹Ì µî·Ï µÇ¾î ÀÖ´ÂÁö Áßº¹ Ã¼Å©
+    // ì´ë¯¸ ë“±ë¡ ë˜ì–´ ìˆëŠ”ì§€ ì¤‘ë³µ ì²´í¬
     QList <int> danteNameRows;
     QList <QStandardItem*> danteNameItems;
 
@@ -183,7 +183,7 @@ void QmlInterface::onAddTxChannel(QString danteName, QString channelNo)
 
     foreach(int row, danteNameRows)
     {
-        // µî·ÏµÈ Ã¤³ÎÀÌ ÀÌ¹Ì Á¸Àç ÇÏ´Â °æ¿ì connection »óÅÂ¸¸ º¯°æ. RX, TX Ã¤³Î ¸ğµÎ º¯°æÇØ¾ßÇÔ.
+        // ë“±ë¡ëœ ì±„ë„ì´ ì´ë¯¸ ì¡´ì¬ í•˜ëŠ” ê²½ìš° connection ìƒíƒœë§Œ ë³€ê²½. RX, TX ì±„ë„ ëª¨ë‘ ë³€ê²½í•´ì•¼í•¨.
         if( channelNo.toInt() == m_qmlModelAllZones->item(row, INDEX_QML_ZONES_CHANNELNO)->text().toInt() )
         {
             isDuplicate = true;
@@ -195,7 +195,7 @@ void QmlInterface::onAddTxChannel(QString danteName, QString channelNo)
         return;
 
 
-    // database ¸¦ °Ë»öÇÏ¿© ÇØ´ç Ã¤³ÎÀÇ zone ÀÌ¸§ÀÌ ¼³Á¤µÇ¾î ÀÖ´ÂÁö ÆÄ¾Ç.
+    // database ë¥¼ ê²€ìƒ‰í•˜ì—¬ í•´ë‹¹ ì±„ë„ì˜ zone ì´ë¦„ì´ ì„¤ì •ë˜ì–´ ìˆëŠ”ì§€ íŒŒì•….
     QString txChannelName = "";
     QString rxChannelName = "";
 
@@ -203,7 +203,7 @@ void QmlInterface::onAddTxChannel(QString danteName, QString channelNo)
 
 
 
-    // rx tx ÀÌ±â ¶§¹®¿¡ µÎ¹ø µ¥ÀÌÅÍ ¸¸µë.
+    // rx tx ì´ê¸° ë•Œë¬¸ì— ë‘ë²ˆ ë°ì´í„° ë§Œë“¬.
     for ( int i = 0 ; i < 2 ; i ++ )
     {       
         for ( int j = 0 ; j < INDEX_QML_ZONES_COUNT ; j ++ )
@@ -212,7 +212,7 @@ void QmlInterface::onAddTxChannel(QString danteName, QString channelNo)
             {
             case INDEX_QML_ZONES_NAME:
             {
-                // Ã¤³Î ÀÌ¸§ÀÌ ¾ø´Â °æ¿ì default zone name À» ³Öµµ·Ï ÇÔ.
+                // ì±„ë„ ì´ë¦„ì´ ì—†ëŠ” ê²½ìš° default zone name ì„ ë„£ë„ë¡ í•¨.
                 if( i == 0 )
                     data = txChannelName.isEmpty() == true ? channelNo + "@" + danteName : txChannelName;
                 else
@@ -247,14 +247,14 @@ void QmlInterface::onAddTxChannel(QString danteName, QString channelNo)
                 data = "true";
                 break;
             case INDEX_QML_ZONES_COLOR:
-                // Àåºñ ÀÌ¸§À» ÇÕÃÄ¼­ Æ¯Á¤ ÄÃ·¯ °ªÀ» ¸¸µë.
+                // ì¥ë¹„ ì´ë¦„ì„ í•©ì³ì„œ íŠ¹ì • ì»¬ëŸ¬ ê°’ì„ ë§Œë“¬.
             {
                 char checksum = 0x00;
                 for ( int i = 0; i < danteName.count() ; i ++ )
                 {
                     checksum += danteName.toLatin1().at(i);
                 }
-                // ÃÖ´ë 100´ë¸¦ °¡Á¤ÇŞÀ¸¹Ç·Î
+                // ìµœëŒ€ 100ëŒ€ë¥¼ ê°€ì •í–‡ìœ¼ë¯€ë¡œ
                 data = QString("#99%1%1")
                         .arg( (quint8(checksum) % 100) * 5, 2, 16,  QChar('0') );
 
@@ -286,12 +286,12 @@ void QmlInterface::onAddTxChannel(QString danteName, QString channelNo)
         QList <int> searchedRows ;
         int searchedRow = -1;
 
-        // Ã¤³Î ¹øÈ£¿¡ ¸Â°Ô ¼ø¼­´ë·Î µ¥ÀÌÅÍ¸¦ ³Ö±â À§ÇÔ.
+        // ì±„ë„ ë²ˆí˜¸ì— ë§ê²Œ ìˆœì„œëŒ€ë¡œ ë°ì´í„°ë¥¼ ë„£ê¸° ìœ„í•¨.
         foreach ( QStandardItem* searchedItem, searchedItems )
         {
             searchedRows << searchedItem->row();
         }
-        // °Å²Ù·Î Á¤·ÄÇÏ¿© µÚ¿¡¼­ ºÎÅÍ °Ë»ö ÇÏµµ·Ï ÇÔ.
+        // ê±°ê¾¸ë¡œ ì •ë ¬í•˜ì—¬ ë’¤ì—ì„œ ë¶€í„° ê²€ìƒ‰ í•˜ë„ë¡ í•¨.
         qSort(searchedRows.begin(), searchedRows.end(), qGreater<int>() );
 
 
@@ -316,7 +316,7 @@ void QmlInterface::onAddTxChannel(QString danteName, QString channelNo)
     }
 
 
-    // registered µÈ tx ¸¦ Ã£¾Æ registered µÇ¾î ÀÖ´Â °æ¿ì txZones selected »óÅÂ·Î º¯°æ.
+    // registered ëœ tx ë¥¼ ì°¾ì•„ registered ë˜ì–´ ìˆëŠ” ê²½ìš° txZones selected ìƒíƒœë¡œ ë³€ê²½.
     if( rowInRegisteredTxZones(danteName, channelNo) != -1)
         setTxZoneSelected(danteName, channelNo, true);
 
@@ -346,7 +346,7 @@ int QmlInterface::rowInRegisteredTxZones(QString danteName, QString channelNo)
 
 void QmlInterface::onRemoveTxChannel(QString danteName, QString channelName)
 {
-    // allZone ¿¡¼­ ÇØ´ç Ã¤³Î Áö¿ò.
+    // allZone ì—ì„œ í•´ë‹¹ ì±„ë„ ì§€ì›€.
     QList <QStandardItem*> danteNameItems;
     danteNameItems = m_qmlModelAllZones->findItems(danteName, Qt::MatchExactly, INDEX_QML_ZONES_DANTENAME );
 
@@ -357,10 +357,10 @@ void QmlInterface::onRemoveTxChannel(QString danteName, QString channelName)
         rows << danteNameItem->row();
     }
 
-    // desending order ·Î Á¤·Ä
+    // desending order ë¡œ ì •ë ¬
     qSort(rows.begin(), rows.end(), qGreater<int>() );
 
-    // rx zone tx zone ¸ğµÎ Áö¿ö¾ß ÇÏ¹Ç·Î
+    // rx zone tx zone ëª¨ë‘ ì§€ì›Œì•¼ í•˜ë¯€ë¡œ
     foreach( int row, rows )
     {
         QStandardItem* item = m_qmlModelAllZones->item(row, INDEX_QML_ZONES_CHANNELNO );
@@ -370,7 +370,7 @@ void QmlInterface::onRemoveTxChannel(QString danteName, QString channelName)
         }
     }
 
-//    // txRegistered ¿¡¼­ ÇØ´ç Ã¤³Î Áö¿ò
+//    // txRegistered ì—ì„œ í•´ë‹¹ ì±„ë„ ì§€ì›€
 
 //    rows.clear();
 //    danteNameItems = m_qmlModelRegisteredTxChannels->findItems(danteName, Qt::MatchExactly, INDEX_QML_ZONES_DANTENAME );
@@ -378,7 +378,7 @@ void QmlInterface::onRemoveTxChannel(QString danteName, QString channelName)
 //    {
 //        rows << danteNameItem->row();
 //    }
-//    // desending order ·Î Á¤·Ä
+//    // desending order ë¡œ ì •ë ¬
 //    qSort(rows.begin(), rows.end(), qGreater<int>() );
 
 //    foreach( int row, rows )
@@ -655,7 +655,7 @@ void QmlInterface::showVirtualKeyboard(bool show)
 
     if( show )
     {
-        // °¡»ó Å°º¸µå°¡ ½ÇÇàµÇ¾î ÀÖÁö ¾Ê´Â °æ¿ì¸¸ ½ÇÇà.
+        // ê°€ìƒ í‚¤ë³´ë“œê°€ ì‹¤í–‰ë˜ì–´ ìˆì§€ ì•ŠëŠ” ê²½ìš°ë§Œ ì‹¤í–‰.
         if ( isProcessAlive == false )
         {
             process.execute(program, exeArg);
@@ -663,7 +663,7 @@ void QmlInterface::showVirtualKeyboard(bool show)
     }
     else
     {
-        // °¡»ó Å°º¸µå°¡ ½ÇÇàµÇ¾î ÀÖ´Â °æ¿ì¸¸ ½ÇÇà.
+        // ê°€ìƒ í‚¤ë³´ë“œê°€ ì‹¤í–‰ë˜ì–´ ìˆëŠ” ê²½ìš°ë§Œ ì‹¤í–‰.
         if ( isProcessAlive == true )
         {
             process.execute("cmd.exe", killArg);
@@ -707,7 +707,7 @@ void QmlInterface::setGroupSelected(int row )
     }
     qDebug() << rxChannelList;
 
-    // ÇØ´ç zone selecting
+    // í•´ë‹¹ zone selecting
     QStringList rxDanteNames = rxDanteNameList.split(":", QString::SkipEmptyParts );
     QStringList rxChannels = rxChannelList.split(":", QString::SkipEmptyParts );
 
@@ -744,7 +744,7 @@ void QmlInterface::removeGroups(int row)
 
 
 
-// Åä±Û¿ë
+// í† ê¸€ìš©
 void QmlInterface::setRxZoneSelected(int row)
 {
 #ifdef DEBUG_QMLINTERFACE_H
@@ -810,7 +810,7 @@ void QmlInterface::setRxZoneSelected(QString danteName, QString rxChannel, QStri
 
     foreach(int row , rows)
     {
-        // channel ÀÇ °æ¿ì 01, 1 ÀÌ·±½ÄÀ¸·Î ¿Ã¼ö ÀÖ±â ¶§¹®¿¡ string ºñ±³´Â ÇÏÁö ¾Ê´Â´Ù.
+        // channel ì˜ ê²½ìš° 01, 1 ì´ëŸ°ì‹ìœ¼ë¡œ ì˜¬ìˆ˜ ìˆê¸° ë•Œë¬¸ì— string ë¹„êµëŠ” í•˜ì§€ ì•ŠëŠ”ë‹¤.
         int channel = m_qmlModelAllZones->item(row, INDEX_QML_ZONES_CHANNELNO)->text().toInt();
         QString type   = m_qmlModelAllZones->item(row, INDEX_QML_ZONES_DEVICE_TYPE)->text();
 
@@ -831,7 +831,7 @@ void QmlInterface::setRxZoneDisabled(QString danteName, bool on )
     qDebug() << Q_FUNC_INFO << danteName << on;
 #endif
 
-    // ±âÁ¸¿¡ disabled µÇ¾ú´ø °Í ±îÁö »èÁ¦ ÇØ¾ß µÇ¹Ç·Î ÀüÃ¼¸¦ °Ë»çÇØ¾ßÇÔ.
+    // ê¸°ì¡´ì— disabled ë˜ì—ˆë˜ ê²ƒ ê¹Œì§€ ì‚­ì œ í•´ì•¼ ë˜ë¯€ë¡œ ì „ì²´ë¥¼ ê²€ì‚¬í•´ì•¼í•¨.
     for( int i = 0;  i < m_qmlModelAllZones->rowCount(); i ++)
     {
         QString targetDanteName = m_qmlModelAllZones->item(i, INDEX_QML_ZONES_DANTENAME)->text();
@@ -887,7 +887,7 @@ void QmlInterface::setTxZoneSelected(QString danteName, QString channelNo, bool 
 
     foreach(int row , danteNameRowIndexes)
     {
-        // channel ÀÇ °æ¿ì 01, 1 ÀÌ·±½ÄÀ¸·Î ¿Ã¼ö ÀÖ±â ¶§¹®¿¡ string ºñ±³´Â ÇÏÁö ¾Ê´Â´Ù.
+        // channel ì˜ ê²½ìš° 01, 1 ì´ëŸ°ì‹ìœ¼ë¡œ ì˜¬ìˆ˜ ìˆê¸° ë•Œë¬¸ì— string ë¹„êµëŠ” í•˜ì§€ ì•ŠëŠ”ë‹¤.
         QString danteName = m_qmlModelAllZones->item(row, INDEX_QML_ZONES_DANTENAME)->text();
         int channel = m_qmlModelAllZones->item(row, INDEX_QML_ZONES_CHANNELNO)->text().toInt();
         QString type   = m_qmlModelAllZones->item(row, INDEX_QML_ZONES_DEVICE_TYPE)->text();
@@ -917,7 +917,7 @@ void QmlInterface::setRegisteredTxZonesSelected(int row)
     qDebug() << Q_FUNC_INFO;
 #endif
 
-    //RegisteredTxZones ÀÇ °æ¿ì ÇÑ¹ø¿¡ ÇÏ³ªÀÇ zone ¸¸ ¼±ÅÃÀÌ °¡´ÉÇØ¾ßÇÔ.
+    //RegisteredTxZones ì˜ ê²½ìš° í•œë²ˆì— í•˜ë‚˜ì˜ zone ë§Œ ì„ íƒì´ ê°€ëŠ¥í•´ì•¼í•¨.
     QStandardItem* selectedItem = 0;
 
     for(int i = 0 ; i < m_qmlModelRegisteredTxChannels->rowCount(); i ++ )
@@ -977,7 +977,7 @@ void QmlInterface::onCurrentNetworkInterface(QString name, QString macAddr)
         if( macAddr.toUpper() ==
                 m_qmlModelNetworkInterfaces->index(i, INDEX_QML_NETWORK_INTERFACES_MAC).data().toString().toUpper() )
         {
-            // ±âÁ¸ µ¥ÀÌÅÍ¿¡¼­ true ·Î º¯°æÀÌ µÈ °æ¿ì
+            // ê¸°ì¡´ ë°ì´í„°ì—ì„œ true ë¡œ ë³€ê²½ì´ ëœ ê²½ìš°
             if( selectedIndex.data().toString() == "false")
             {
                 interfaceIndex = m_qmlModelNetworkInterfaces->index(i, INDEX_QML_NETWORK_INTERFACES_NETWORK_INTERFACE_INDEX).data().toString();
@@ -1002,8 +1002,8 @@ void QmlInterface::setNetworkInterfaceSelected(int row)
     QString name = "";
     QString interfaceIndex = "";
 
-    // interface selecting ÀÇ °æ¿ì selecting µÈ °æ¿ì ÀÚµ¿À¸·Î ÀÌº¥Æ®°¡ conmon manager ¿¡¼­ ¿Ã¶ó ¿À±â ¶§¹®¿¡
-    // ±â´É ±¸Çö ÇÏÁö ¾ÊÀ½.
+    // interface selecting ì˜ ê²½ìš° selecting ëœ ê²½ìš° ìë™ìœ¼ë¡œ ì´ë²¤íŠ¸ê°€ conmon manager ì—ì„œ ì˜¬ë¼ ì˜¤ê¸° ë•Œë¬¸ì—
+    // ê¸°ëŠ¥ êµ¬í˜„ í•˜ì§€ ì•ŠìŒ.
     for ( int i = 0; i < m_qmlModelNetworkInterfaces->rowCount() ; i ++ )
     {
         if( i == row )
@@ -1035,7 +1035,7 @@ void QmlInterface::refreshNetworkInterfaces()
         subnetIndex = m_qmlModelNetworkInterfaces->index(i, INDEX_QML_NETWORK_INTERFACES_NETMASK );
         interfaceIndex = m_qmlModelNetworkInterfaces->index(i, INDEX_QML_NETWORK_INTERFACES_NETWORK_INTERFACE_INDEX );
 
-        // qt ¿¡¼­ networkinterface Á¤º¸¸¦ ¾ò¾î ¿À´Â°ÍÀÌ dante º¸´Ù ´À¸®±â ¶§¹®¿¡ Å¬¸¯ÀÌ³ª refresh ¸¦ ÇŞÀ»¶§ Á¤º¸¸¦ ¾ò¾î ¿Àµµ·Ï ÇÔ.
+        // qt ì—ì„œ networkinterface ì •ë³´ë¥¼ ì–»ì–´ ì˜¤ëŠ”ê²ƒì´ dante ë³´ë‹¤ ëŠë¦¬ê¸° ë•Œë¬¸ì— í´ë¦­ì´ë‚˜ refresh ë¥¼ í–‡ì„ë•Œ ì •ë³´ë¥¼ ì–»ì–´ ì˜¤ë„ë¡ í•¨.
         foreach( QNetworkInterface interface, QNetworkInterface::allInterfaces() )
         {
             QString tempMacAddr = interface.hardwareAddress().toUpper();
@@ -1043,7 +1043,7 @@ void QmlInterface::refreshNetworkInterfaces()
             {
                 foreach( QNetworkAddressEntry address,   interface.addressEntries() )
                 {
-                    // ip4 address °ª¸¸ ¸®½ºÆ®¿¡ Ãß°¡.
+                    // ip4 address ê°’ë§Œ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€.
                     if( address.ip().protocol()  == QAbstractSocket::IPv4Protocol )
                     {
                         m_qmlModelNetworkInterfaces->setData(ipAddrIndex,  address.ip().toString() );
@@ -1079,7 +1079,7 @@ void QmlInterface::setZoneName( QString deviceType, QString danteName, QString c
 #ifdef DEBUG_QMLINTERFACE_H
     qDebug() << Q_FUNC_INFO;
 #endif
-    // remote db ¿¡ Á¢¼ÓÇØ¼­ zone ÀÌ¸§ ¾÷µ¥ÀÌÆ® ¼º°øÈÄ local db ¾÷µ¥ÀÌÆ® , memory »ó¿¡¼­ Á¸Àç ÇÏ´Â º¯¼ö ¾÷µ¥ÀÌÆ® ¼öÇà
+    // remote db ì— ì ‘ì†í•´ì„œ zone ì´ë¦„ ì—…ë°ì´íŠ¸ ì„±ê³µí›„ local db ì—…ë°ì´íŠ¸ , memory ìƒì—ì„œ ì¡´ì¬ í•˜ëŠ” ë³€ìˆ˜ ì—…ë°ì´íŠ¸ ìˆ˜í–‰
 
     QString queryString;
     int id = -1;
@@ -1087,7 +1087,7 @@ void QmlInterface::setZoneName( QString deviceType, QString danteName, QString c
     //remote db update
 
 
-    // ¸Ş¸ğ¸®»ó¿¡ Á¸Àç ÇÏ´Â DB ¾÷µ¥ÀÌÆ®
+    // ë©”ëª¨ë¦¬ìƒì— ì¡´ì¬ í•˜ëŠ” DB ì—…ë°ì´íŠ¸
     // RXZONE, TXZONE, REGISTEREDTXZONE
     QList <QStandardItem*> danteNameItems = m_qmlModelAllZones->findItems(danteName, Qt::MatchExactly, INDEX_QML_ZONES_DANTENAME);
     QList <int> rows;
@@ -1099,7 +1099,7 @@ void QmlInterface::setZoneName( QString deviceType, QString danteName, QString c
 
     foreach(int row , rows)
     {
-        // channel ÀÇ °æ¿ì 01, 1 ÀÌ·±½ÄÀ¸·Î ¿Ã¼ö ÀÖ±â ¶§¹®¿¡ string ºñ±³´Â ÇÏÁö ¾Ê´Â´Ù.
+        // channel ì˜ ê²½ìš° 01, 1 ì´ëŸ°ì‹ìœ¼ë¡œ ì˜¬ìˆ˜ ìˆê¸° ë•Œë¬¸ì— string ë¹„êµëŠ” í•˜ì§€ ì•ŠëŠ”ë‹¤.
         int channel = m_qmlModelAllZones->item(row, INDEX_QML_ZONES_CHANNELNO)->text().toInt();
         QString type   = m_qmlModelAllZones->item(row, INDEX_QML_ZONES_DEVICE_TYPE)->text();
 
@@ -1121,7 +1121,7 @@ void QmlInterface::setZoneName( QString deviceType, QString danteName, QString c
 
     foreach(int row , rows)
     {
-        // channel ÀÇ °æ¿ì 01, 1 ÀÌ·±½ÄÀ¸·Î ¿Ã¼ö ÀÖ±â ¶§¹®¿¡ string ºñ±³´Â ÇÏÁö ¾Ê´Â´Ù.
+        // channel ì˜ ê²½ìš° 01, 1 ì´ëŸ°ì‹ìœ¼ë¡œ ì˜¬ìˆ˜ ìˆê¸° ë•Œë¬¸ì— string ë¹„êµëŠ” í•˜ì§€ ì•ŠëŠ”ë‹¤.
         int channel = m_qmlModelRegisteredTxChannels->item(row, INDEX_QML_ZONES_CHANNELNO)->text().toInt();
         if(channel == channelNo.toInt()  )
         {
@@ -1149,7 +1149,7 @@ void QmlInterface::setGroupName(QString id, QString groupName )
     qDebug() << Q_FUNC_INFO << id << groupName;
 #endif
 
-    // db ¿Í ¸ğµ¨À» ÀüºÎ update ÇØÁÜ.
+    // db ì™€ ëª¨ë¸ì„ ì „ë¶€ update í•´ì¤Œ.
 
     QList<int> rows;
     QList <QStandardItem*> items = m_qmlModelGroups->findItems(id, Qt::MatchExactly, INDEX_QML_GROUPS_ID );
@@ -1232,7 +1232,7 @@ void QmlInterface::insertTxRegisteredZones(int dragIndex, int targetIndex)
     {
         rows << item->row();
     }
-    // Áßº¹µÈ µ¥ÀÌÅÍ°¡ ¿À´Â °æ¿ì »ğÀÔ ÁßÁö
+    // ì¤‘ë³µëœ ë°ì´í„°ê°€ ì˜¤ëŠ” ê²½ìš° ì‚½ì… ì¤‘ì§€
     foreach (int row , rows)
     {
         QStandardItem* channelNoItem = m_qmlModelRegisteredTxChannels->item(row, INDEX_QML_ZONES_CHANNELNO);
@@ -1292,12 +1292,12 @@ void QmlInterface::moveTxRegisteredZones(int sourceIndex, int dstIndex )
 #ifdef DEBUG_QMLINTERFACE_H
     qDebug() << Q_FUNC_INFO;
 #endif
-    // ¿Å±â·Á°í ÇÏ´Â À§Ä¡°¡ °°Àº °æ¿ì operation Ãë
+    // ì˜®ê¸°ë ¤ê³  í•˜ëŠ” ìœ„ì¹˜ê°€ ê°™ì€ ê²½ìš° operation ì·¨
     if( sourceIndex == dstIndex )
         return;
 
-    // dstIndex -1 ÀÎ °æ¿ì´Â ±× Àü´Ü°è¿¡¼­ Ã³¸® µÇ±â ¶§¹®¿¡ Ã³¸® ÇÏ¸é ¾ÈµÊ.
-    // (½ÇÁ¦ ¹ö±×·Î -1 °ªÀÌ ¿À´Â °æ¿ì ÀÖÀ½ )
+    // dstIndex -1 ì¸ ê²½ìš°ëŠ” ê·¸ ì „ë‹¨ê³„ì—ì„œ ì²˜ë¦¬ ë˜ê¸° ë•Œë¬¸ì— ì²˜ë¦¬ í•˜ë©´ ì•ˆë¨.
+    // (ì‹¤ì œ ë²„ê·¸ë¡œ -1 ê°’ì´ ì˜¤ëŠ” ê²½ìš° ìˆìŒ )
     if( dstIndex == -1 )
         return;
     QList< QStandardItem*> rowItems = m_qmlModelRegisteredTxChannels->takeRow(sourceIndex);
@@ -1316,7 +1316,7 @@ void QmlInterface::initRegisteredTxZonesModel()
     QList <QStandardItem*> items;
 
 
-    // ÃÊ±â ½ÇÇà½Ã registeredTxZone ÀÇ ÀÌ¸§À» DeviceChannelInfo Á¤º¸¿¡ µ¿±âÈ­ ½ÃÅ´.
+    // ì´ˆê¸° ì‹¤í–‰ì‹œ registeredTxZone ì˜ ì´ë¦„ì„ DeviceChannelInfo ì •ë³´ì— ë™ê¸°í™” ì‹œí‚´.
     for ( int i = 0 ; i < m_qmlModelRegisteredTxChannels->rowCount(); i++ )
     {
         QString danteName = m_qmlModelRegisteredTxChannels->item(i, INDEX_QML_ZONES_DANTENAME)->text();
@@ -1639,7 +1639,7 @@ QVariantMap QmlInterface::AllRxZonesInfo()
 
         if( selectedRxZonesInfo.keys().indexOf(rxDanteName) != -1)
         {
-            //Áßº¹µ¥ÀÌÅÍ°¡ ÀÖ´Â °æ¿ì
+            //ì¤‘ë³µë°ì´í„°ê°€ ìˆëŠ” ê²½ìš°
             QString previousData  = selectedRxZonesInfo.take(rxDanteName).toString();
             selectedRxZonesInfo.insert(rxDanteName, previousData + "," + rxChannel);
         }
@@ -1682,7 +1682,7 @@ QVariantMap QmlInterface::selectedRxZonesInfo()
 
             if( selectedRxZonesInfo.keys().indexOf(rxDanteName) != -1)
             {
-                //Áßº¹µ¥ÀÌÅÍ°¡ ÀÖ´Â °æ¿ì
+                //ì¤‘ë³µë°ì´í„°ê°€ ìˆëŠ” ê²½ìš°
                 QString previousData  = selectedRxZonesInfo.take(rxDanteName).toString();
                 selectedRxZonesInfo.insert(rxDanteName, previousData + "," + rxChannel);
             }
@@ -1711,7 +1711,7 @@ QString QmlInterface::selectedTxZonesInfo()
         rows << item->row();
     }
 
-    // tx ÀÇ °æ¿ì µ¥ÀÌÅÍ´Â ÇÑ°³¸¸ ÀÖÀ½
+    // tx ì˜ ê²½ìš° ë°ì´í„°ëŠ” í•œê°œë§Œ ìˆìŒ
     foreach (int row , rows )
     {
         QString txDanteName = m_qmlModelRegisteredTxChannels->item(row, INDEX_QML_ZONES_DANTENAME)->text();

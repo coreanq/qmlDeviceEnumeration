@@ -26,7 +26,7 @@ class QmlInterface : public QObject
     Q_OBJECT
 public:
 
-    // qstandardItemmodel ¿¡¼­ »ç¿ëÇÒ ÄÃ·³ Á¤ÀÇ
+    // qstandardItemmodel ì—ì„œ ì‚¬ìš©í•  ì»¬ëŸ¼ ì •ì˜
     enum {
         INDEX_QML_ZONES_ID,
         INDEX_QML_ZONES_NAME,
@@ -65,7 +65,7 @@ public:
         INDEX_QML_NETWORK_INTERFACES_MAC,
         INDEX_QML_NETWORK_INTERFACES_LINKSPEED,
         INDEX_QML_NETWORK_INTERFACES_ISUP,
-        INDEX_QML_NETWORK_INTERFACES_NETWORK_INTERFACE_INDEX, // dante ¿¡¼­ »ç¿ëµÇ´Â network card index ¸¦ ÁöÄªÇÔ.
+        INDEX_QML_NETWORK_INTERFACES_NETWORK_INTERFACE_INDEX, // dante ì—ì„œ ì‚¬ìš©ë˜ëŠ” network card index ë¥¼ ì§€ì¹­í•¨.
         INDEX_QML_NETWORK_INTERFACES_SELECTED,
         INDEX_QML_NETWORKINTERFACES_COUNT
     };
@@ -167,7 +167,7 @@ public:
     void insertRegisteredTxZonesToDB(QList <QStandardItem*> items);
     void removeRegisteredTxZonesFromDB(QString danteName, QString channelNo);
 
-    // loopback, subs on/off ¸¦ À§ÇØ ¿ÜºÎ¿¡¼­ »ç¿ëµÇ´Â ÇÔ¼ö
+    // loopback, subs on/off ë¥¼ ìœ„í•´ ì™¸ë¶€ì—ì„œ ì‚¬ìš©ë˜ëŠ” í•¨ìˆ˜
     QVariantMap AllRxZonesInfo();
     QVariantMap selectedRxZonesInfo();
     QString selectedTxZonesInfo();
@@ -198,8 +198,8 @@ signals:
     void sgPasswordChanged(QString str);
 
     void sgSetDanteName(QString from, QString to );
-    // qml ¹öÆ°ÀÌ ´­¸®¸é ¹ß»ıµÇ´Â signal
-    // qml ¿¡¼­ Á÷Á¢ signal À» ¸¸µé¾î »ç¿ëÇÏ´Â °æ¿ì ÇØ´ç component °¡ µî·ÏÀÌ µÇ¾î¾ß ÇÏ±â ¶§¹®¿¡ ºÒÆíÇÔ.
+    // qml ë²„íŠ¼ì´ ëˆŒë¦¬ë©´ ë°œìƒë˜ëŠ” signal
+    // qml ì—ì„œ ì§ì ‘ signal ì„ ë§Œë“¤ì–´ ì‚¬ìš©í•˜ëŠ” ê²½ìš° í•´ë‹¹ component ê°€ ë“±ë¡ì´ ë˜ì–´ì•¼ í•˜ê¸° ë•Œë¬¸ì— ë¶ˆí¸í•¨.
     void sgBtnSubsOnClicked();
     void sgBtnSubsOffClicked();
     void sgBtnCheckDeviceInfoClicked();
@@ -209,17 +209,17 @@ signals:
     void sgBtnLogShowClicked();
     void sgBtnDbManagementClicked();
 
-    // qml ±âÅ¸ ¼³Á¤¿¡¼­ network interface ¸¦ Å¬¸¯ÇÒ¶§ ¹ß»ıÇÏ´Â ½Ã±×³Î
+    // qml ê¸°íƒ€ ì„¤ì •ì—ì„œ network interface ë¥¼ í´ë¦­í• ë•Œ ë°œìƒí•˜ëŠ” ì‹œê·¸ë„
     void sgNetworkInterfaceSelected(QString name, QString macAddr, QString interfaceIndex);
 
     void sgSetLoopback(QString danteName, bool on ) ;
 
-    // qml ¿¡¼­ reload ¾ÆÀÌÄÜÀ» Å¬¸¯ÇÑ °æ¿ì browsing API ¿¡ ÀÖ´Â ³»ºÎ Àåºñ¸®½ºÆ®¸¦ ÀüºÎ Áö¿ì°í ´Ù½Ã °Ë»ö ÇÏ°Ô ÇÔ.
+    // qml ì—ì„œ reload ì•„ì´ì½˜ì„ í´ë¦­í•œ ê²½ìš° browsing API ì— ìˆëŠ” ë‚´ë¶€ ì¥ë¹„ë¦¬ìŠ¤íŠ¸ë¥¼ ì „ë¶€ ì§€ìš°ê³  ë‹¤ì‹œ ê²€ìƒ‰ í•˜ê²Œ í•¨.
     void sgReloadDevices();
 
     
 public slots:
-    //conmon manager ¿¡¼­ current interface ¿¡ ´ëÇÑ Á¤º¸°¡ ¿Ã¶ó¿À¸é ½ÇÇàµÇ´Â ÇÔ¼ö.
+    //conmon manager ì—ì„œ current interface ì— ëŒ€í•œ ì •ë³´ê°€ ì˜¬ë¼ì˜¤ë©´ ì‹¤í–‰ë˜ëŠ” í•¨ìˆ˜.
     void onCurrentNetworkInterface(QString name, QString macAddr);
 
     void onDeviceOk(QString danteName);
@@ -228,7 +228,7 @@ public slots:
     void onRoutingGetNetworkLoopback(QString danteName, bool on);
     void onRoutingGetRxChannelSubscription(QString danteName, int rxChannel, QString subscription);
 
-    // browsing channel °ü·Ã Á¤º¸ ¾÷µ¥ÀÌÆ®
+    // browsing channel ê´€ë ¨ ì •ë³´ ì—…ë°ì´íŠ¸
     void onAddTxChannel(QString danteName, QString channelNo);
     void onRemoveTxChannel(QString danteName, QString channelNo);
     void onAddTxLabel(QString danteName, QString channelNo, QString labelName);

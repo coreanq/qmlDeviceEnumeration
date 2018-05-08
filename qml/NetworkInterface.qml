@@ -19,6 +19,7 @@ Item {
     width: parent.width
 
     MouseArea {
+            visible: false
         anchors.fill: parent;
         onClicked: {
             // ip 가 존재해야만 클릭 할 수 잇도록 수정.
@@ -58,12 +59,12 @@ Item {
                 // network 링크가 on 인 상태에서
                 if( networkInterface.isUp == "true" ){
                     if( linkSpeed == "100" )
-                        return "qrc:/image/nic_normal_64.png";
+                        return qmlAssetsPath + "nic_normal_64.png";
                     else
-                        return "qrc:/image/nic_normal_64.png";
+                        return qmlAssetsPath + "nic_normal_64.png";
                 }
                 else {
-                    return "qrc:/image/nic_normal_64.png";
+                    return qmlAssetsPath + "nic_normal_64.png";
                 }
             }
 

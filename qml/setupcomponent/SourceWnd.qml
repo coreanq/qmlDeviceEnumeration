@@ -63,7 +63,8 @@ Item {
         MouseArea {
             anchors.fill: parent
             id: viewTxZonesArea
-            visible: !sourceWnd.editMode
+//            visible: !sourceWnd.editMode
+            visible: false
             onReleased: {
 
                 // drag 시 잔상이 남는 현상을 제거 하기 위해 화면 강제 업데이트 시킴

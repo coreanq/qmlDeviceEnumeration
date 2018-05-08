@@ -75,9 +75,10 @@ Item {
         anchors.topMargin: 20
         anchors.right: parent.right
         anchors.rightMargin: 40
-        source: "qrc:/image/setting_close_64.png"
+        source: qmlAssetsPath + "setting_close_64.png"
 
         MouseArea{
+            visible: false
             anchors.fill:parent
             onClicked:{
                 settingPage.btnCloseClicked();
@@ -191,7 +192,7 @@ Item {
 
                 horizontalTileMode: BorderImage.Stretch
                 verticalTileMode: BorderImage.Stretch
-                source: "qrc:/image/textbox.svg"
+                source: qmlAssetsPath + "textbox.svg"
 
                 Item {
                      anchors.fill: parent
@@ -250,7 +251,7 @@ Item {
 
                 horizontalTileMode: BorderImage.Stretch
                 verticalTileMode: BorderImage.Stretch
-                source: "qrc:/image/textbox.svg"
+                source: qmlAssetsPath + "textbox.svg"
 
                 Item {
                      anchors.fill: parent
@@ -306,7 +307,7 @@ Item {
 
                 horizontalTileMode: BorderImage.Stretch
                 verticalTileMode: BorderImage.Stretch
-                source: "qrc:/image/textbox.svg"
+                source: qmlAssetsPath + "textbox.svg"
 
                 Item {
                      anchors.fill: parent
@@ -358,7 +359,7 @@ Item {
 
                 horizontalTileMode: BorderImage.Stretch
                 verticalTileMode: BorderImage.Stretch
-                source: "qrc:/image/textbox.svg"
+                source: qmlAssetsPath + "textbox.svg"
 
                 Item {
                      anchors.fill: parent
@@ -441,10 +442,10 @@ Item {
                         settingPage.tryLoopbackSliderMove(on);
                     }
 
-                    buttonImageOn: "qrc:/image/beryl/knob_on.svg"
-                    buttonImageOff: "qrc:/image/beryl/knob_off.svg"
-                    backgroundImageNormal: "qrc:/image/beryl/background.svg"
-                    backgroundImageHover: "qrc:/image/beryl/background_hover.svg"
+                    buttonImageOn: qmlAssetsPath + "beryl/knob_on.svg"
+                    buttonImageOff: qmlAssetsPath + "beryl/knob_off.svg"
+                    backgroundImageNormal: qmlAssetsPath + "beryl/background.svg"
+                    backgroundImageHover: qmlAssetsPath + "beryl/background_hover.svg"
                 }
 
 
@@ -482,15 +483,15 @@ Item {
 
         balloonHeight: 54
         balloonTriangleHeight: 24
-        backgroundImage: "qrc:/image/slider/weathergod_scale.png"
-        balloonImage: "qrc:/image/slider/balloon/balloon_minsize.svg"
-        balloonTriangleImage: "qrc:/image/slider/balloon/balloon_triangle.svg"
-        knobImagePressed: "qrc:/image/slider/button_pressed.svg"
-        knobImageNormal: "qrc:/image/slider/button_normal.svg"
-        needleImage: "qrc:/image/slider/needle.svg"
+        backgroundImage: qmlAssetsPath + "slider/weathergod_scale.png"
+        balloonImage: qmlAssetsPath + "slider/balloon/balloon_minsize.svg"
+        balloonTriangleImage: qmlAssetsPath + "slider/balloon/balloon_triangle.svg"
+        knobImagePressed: qmlAssetsPath + "slider/button_pressed.svg"
+        knobImageNormal: qmlAssetsPath + "slider/button_normal.svg"
+        needleImage: qmlAssetsPath + "slider/needle.svg"
 
         focusVisible: false
-        focusImage: "qrc:/image/slider/focus.svg"
+        focusImage: qmlAssetsPath + "slider/focus.svg"
 
         // Every value change will change the ballontext
         onValueChanged: {

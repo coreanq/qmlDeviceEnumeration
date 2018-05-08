@@ -88,6 +88,7 @@ Item {
         color: "black"
 
         MouseArea {
+            visible: false
             anchors.fill: parent
             drag.target: knob
             drag.axis: Drag.XAxis

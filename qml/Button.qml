@@ -55,6 +55,7 @@ Item {
 
     MouseArea {
         anchors.fill: parent
+            visible: false
         onClicked: {
             if (!container.disabled)
                 container.clicked()

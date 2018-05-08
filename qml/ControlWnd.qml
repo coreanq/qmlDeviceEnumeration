@@ -14,7 +14,7 @@ Item {
 
     ZoneWnd{
         id: zoneWnd
-        editMode: false
+        editMode: true
         width: parent.width / 5 * 4
         anchors.top: parent.top
         anchors.bottom: loopbackPanel.top
@@ -164,6 +164,7 @@ Item {
 
        MouseArea{
            anchors.fill: parent
+            visible: false
        }
 
        Row {

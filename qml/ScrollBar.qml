@@ -4,7 +4,7 @@ import QtQuick 2.0
 BorderImage {
     property variant target
 
-    source: "qrc:/image/scrollbar.png"
+    source: qmlAssetsPath + "scrollbar.png"
     border {left: 0; top: 3; right: 0; bottom: 3}
     width: 30
 
@@ -17,7 +17,7 @@ BorderImage {
 
         Image {
             id: upArrow
-            source: "qrc:/image/up-arrow.png"
+            source: qmlAssetsPath + "up-arrow.png"
             fillMode: Image.PreserveAspectFit
             anchors.top: parent.top
             width: 30
@@ -25,6 +25,7 @@ BorderImage {
             smooth: true
 
             MouseArea {
+            visible: false
                 anchors.fill: parent
                 onPressed: {
                     timer.scrollAmount = -20
@@ -62,6 +63,7 @@ BorderImage {
             width: parent.width
 
             MouseArea {
+            visible: false
                 anchors.fill: parent
                 onPressed: {
                     timer.scrollAmount = target.height * (mouseY < slider.y ? -1 : 1)	// scroll by a page
@@ -75,7 +77,7 @@ BorderImage {
             BorderImage {
                 id:slider
 
-                source: "qrc:/image/slider.png"
+                source: qmlAssetsPath + "slider.png"
                 border {left: 0; top: 3; right: 0; bottom: 3}
                 width: parent.width
 
@@ -84,6 +86,7 @@ BorderImage {
 
                 MouseArea {
                     anchors.fill: parent
+            visible: false
                     drag.target: parent
                     drag.axis: Drag.YAxis
                     drag.minimumY: 0
@@ -102,10 +105,11 @@ BorderImage {
             width: 30
             height: 30
             fillMode: Image.PreserveAspectFit
-            source: "qrc:/image/dn-arrow.png"
+            source: qmlAssetsPath + "dn-arrow.png"
             anchors.bottom: parent.bottom
             smooth: true
             MouseArea {
+            visible: false
                 anchors.fill: parent
                 onPressed: {
                     timer.scrollAmount = 20

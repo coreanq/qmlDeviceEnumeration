@@ -37,7 +37,7 @@ Item {
         Column{
             Image {
                 id: imgControl
-                source: Constant.imgPath + "navigation_control_64.png"
+                source: qmlAssetsPath + "navigation_control_64.png"
                 smooth: true
                 MouseArea{
                     anchors.fill: parent
@@ -48,6 +48,7 @@ Item {
                     onReleased:{
                         imgControl.scale =1
                     }
+                 
                 }
                 Rectangle {
                     anchors.fill: parent
@@ -74,7 +75,7 @@ Item {
         Column{
             Image{
                 id: imgSetup
-                source: "qrc:/image/navigation_setup_64.png"
+                source: qmlAssetsPath + "navigation_setup_64.png"
                 smooth: true
                 MouseArea{
                     anchors.fill: parent
@@ -113,7 +114,7 @@ Item {
             visible: false
             Image {
                 id: imgLog
-                source: "qrc:/image/navigation_log_64.png"
+                source: qmlAssetsPath + "navigation_log_64.png"
                 smooth: true
                 MouseArea{
                     anchors.fill: parent
@@ -150,7 +151,7 @@ Item {
         Column{
             Image{
                 id: imgHelp
-                source: "qrc:/image/navigation_help_64.png"
+                source: qmlAssetsPath + "navigation_help_64.png"
                 smooth: true
                 MouseArea{
                     anchors.fill: parent
@@ -187,7 +188,7 @@ Item {
         Column{
             Image {
                 id: imgZoomIn
-                source: "qrc:/image/zoom_in_64.png"
+                source: qmlAssetsPath + "zoom_in_64.png"
                 smooth: true
                 fillMode: Image.PreserveAspectFit
                 MouseArea{
@@ -219,7 +220,7 @@ Item {
         Column{
             Image {
                 id: imgZoomOut
-                source: "qrc:/image/zoom_out_64.png"
+                source: qmlAssetsPath + "zoom_out_64.png"
                 smooth: true
                 fillMode: Image.PreserveAspectFit
                 MouseArea{
@@ -248,7 +249,7 @@ Item {
         Column{
             Image {
                 id: imgReload
-                source: "qrc:/image/navigation_reload_64.png"
+                source: qmlAssetsPath + "navigation_reload_64.png"
                 smooth: true
                 fillMode: Image.PreserveAspectFit
                 MouseArea{
@@ -302,7 +303,7 @@ Item {
             height: parent.height
             Image {
                 id: imgKorea
-                source: "qrc:/image/navigation_korea_64.png"
+                source: qmlAssetsPath + "navigation_korea_64.png"
                 smooth: true
                 MouseArea{
                     anchors.fill: parent
@@ -318,7 +319,7 @@ Item {
             Image{
                 anchors.fill: imgKorea
                 anchors.margins: 10
-                source: "qrc:/image/navigation_check_64.png"
+                source: qmlAssetsPath + "navigation_check_64.png"
                 smooth: true
 //                opacity: mainWindow.language == "Korean" ? 0.5 : 0
             }
@@ -338,7 +339,7 @@ Item {
             height: parent.height
             Image {
                 id: imgEnglish
-                source: "qrc:/image/navigation_english_64.png"
+                source: qmlAssetsPath + "navigation_english_64.png"
                 smooth: true
                 MouseArea{
                     anchors.fill: parent
@@ -354,7 +355,7 @@ Item {
             Image{
                 anchors.fill: imgEnglish
                 anchors.margins: 10
-                source: "qrc:/image/navigation_check_64.png"
+                source: qmlAssetsPath + "navigation_check_64.png"
                 smooth: true
 //                opacity: mainWindow.language == "English" ? 0.5 : 0
             }

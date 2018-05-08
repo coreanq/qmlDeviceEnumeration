@@ -6,7 +6,7 @@ Item {
     id: zoneWnd
     property bool visibleMouseArea : true
     property bool enableGroupControl : false
-    property bool editMode : false
+    property bool editMode : true
 
     property int pressDelay : 10 // flick 와 click 동작을 모두 구현하기 위함
     property int currentCellWidth: 240

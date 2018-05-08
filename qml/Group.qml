@@ -44,6 +44,7 @@ Item{
 
             MouseArea {
                 anchors.fill: parent;
+            visible: false
                 onClicked: {
                     if( editMode == true ){
                         group.flipped = !group.flipped;
@@ -77,7 +78,7 @@ Item{
                         smooth: true
                         fillMode: Image.PreserveAspectFit
                         anchors.fill: parent
-                        source: "qrc:/image/navigation_check_64.png"
+                        source: qmlAssetsPath + "navigation_check_64.png"
                     }
                 }
                 Item{
@@ -90,7 +91,7 @@ Item{
                         anchors.fill: parent
 
                         source: {
-                                return "qrc:/image/folder_music_64.png";
+                                return qmlAssetsPath + "folder_music_64.png";
                         }
                     }
                 }
@@ -143,7 +144,7 @@ Item{
 
                 titleText : qsTr("Setting: Group") + ""
                 description: qsTr("It can be set group's name") + ""
-                iconSource:  "qrc:/image/setting_group_128.png"
+                iconSource:  qmlAssetsPath + "setting_group_128.png"
                 name: group.name
                 sourceName: group.source
 

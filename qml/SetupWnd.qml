@@ -13,6 +13,7 @@ Item {
     property int maximumWidth : 240
     property double scale : 1
     property alias accessSetupPanelCoverId : setupPanelCover
+    property alias setupCotainer : setupWnd.setupCotainer
 
     PinchArea {
         id: pinchArea
@@ -137,7 +138,7 @@ Item {
                    anchors.leftMargin: 20
                    width: 32
                    height: 32
-                   source: "qrc:/image/navigation_check_64.png"
+                   source: qmlAssetsPath + "navigation_check_64.png"
                    smooth: true
                    opacity: setupWnd.state == "sourceSetting" ? 0.8 : 0
                }
@@ -160,7 +161,7 @@ Item {
 
                    width: 32
                    height: 32
-                   source: "qrc:/image/navigation_check_64.png"
+                   source: qmlAssetsPath + "navigation_check_64.png"
                    smooth: true
                    opacity: setupWnd.state == "zoneSetting" ? 0.8 : 0
                }
@@ -182,7 +183,7 @@ Item {
                    anchors.leftMargin: 20
                    width: 32
                    height: 32
-                   source: "qrc:/image/navigation_check_64.png"
+                   source: qmlAssetsPath + "navigation_check_64.png"
                    smooth: true
                    opacity: setupWnd.state == "dbSetting" ? 0.8 : 0
                }
@@ -256,10 +257,10 @@ Item {
 
                    }
 
-                   buttonImageOn: "qrc:/image/beryl/knob_on.svg"
-                   buttonImageOff: "qrc:/image/beryl/knob_off.svg"
-                   backgroundImageNormal: "qrc:/image/beryl/background.svg"
-                   backgroundImageHover: "qrc:/image/beryl/background_hover.svg"
+                   buttonImageOn: qmlAssetsPath + "beryl/knob_on.svg"
+                   buttonImageOff: qmlAssetsPath + "beryl/knob_off.svg"
+                   backgroundImageNormal: qmlAssetsPath + "beryl/background.svg"
+                   backgroundImageHover: qmlAssetsPath + "beryl/background_hover.svg"
                }
                Item{
                    id: txtOn
@@ -347,10 +348,10 @@ Item {
                        cppInterface.setEnableVirtualKeyboard(enabled);
                    }
 
-                   buttonImageOn: "qrc:/image/beryl/knob_on.svg"
-                   buttonImageOff: "qrc:/image/beryl/knob_off.svg"
-                   backgroundImageNormal: "qrc:/image/beryl/background.svg"
-                   backgroundImageHover: "qrc:/image/beryl/background_hover.svg"
+                   buttonImageOn: qmlAssetsPath + "beryl/knob_on.svg"
+                   buttonImageOff: qmlAssetsPath + "beryl/knob_off.svg"
+                   backgroundImageNormal: qmlAssetsPath + "beryl/background.svg"
+                   backgroundImageHover: qmlAssetsPath + "beryl/background_hover.svg"
                }
                Item{
                    id: txtOn2

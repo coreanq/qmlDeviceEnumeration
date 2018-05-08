@@ -17,18 +17,18 @@ Flipable {
     front: Image {
         id: imgCona;
         fillMode: Image.PreserveAspectFit
-        source: "qrc:/image/logo_interm_128.png";
+        source: qmlAssetsPath + "logo_interm_128.png";
         smooth: true
     }
     back: Image {
         fillMode: Image.PreserveAspectFit
-        source: "qrc:/image/logo_interm_128.png";
+        source: qmlAssetsPath + "logo_interm_128.png";
         smooth: true
     }
 
 
     state: "front"
-    MouseArea { anchors.fill: parent; onClicked: logo.flipped = !logo.flipped }
+    MouseArea { visible: false; anchors.fill: parent; onClicked: logo.flipped = !logo.flipped }
 
     transform: Rotation {
         id: rotation; origin.x: logo.width / 2; origin.y: logo.height / 2

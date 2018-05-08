@@ -41,7 +41,7 @@ Item{
         opacity: 0.5
 
     }
-
+    
     Flipable {
         id: flipableZone
         // front 의 경우는 정렬을 위해 anchors.fill 해서 margin 을 사용
@@ -65,7 +65,7 @@ Item{
                 id: frontZoneMouseArea
                 anchors.fill: parent;
                 onClicked: {
-//                    console.debug( zone.deviceType + " " + index);
+                    console.debug( zone.deviceType + " " + index);
                     if( editMode == true ){
                         zone.flipped = !zone.flipped;
                     }
@@ -117,7 +117,7 @@ Item{
                     smooth: true
                     anchors.fill: parent
                     fillMode: Image.PreserveAspectFit
-                    source: "qrc:/image/clock_256.png"
+                    source: qmlAssetsPath + "clock_256.png"
 
                 }
             }
@@ -142,7 +142,7 @@ Item{
                     smooth: true
                     fillMode: Image.PreserveAspectFit
                     anchors.fill: parent
-                    source: "qrc:/image/warning_256.png"
+                    source: qmlAssetsPath + "warning_256.png"
                 }
             }
             Rectangle{
@@ -165,7 +165,7 @@ Item{
                     smooth: true
                     fillMode: Image.PreserveAspectFit
                     anchors.fill: parent
-                    source: "qrc:/image/blue_warning_256.png"
+                    source: qmlAssetsPath + "blue_warning_256.png"
                 }
             }
 
@@ -191,7 +191,7 @@ Item{
                     smooth: true
                     fillMode: Image.PreserveAspectFit
                     anchors.fill: parent
-                    source: "qrc:/image/disabled_256.png"
+                    source: qmlAssetsPath + "disabled_256.png"
                 }
             }
 
@@ -278,7 +278,7 @@ Item{
                         smooth: true
                         fillMode: Image.PreserveAspectFit
                         anchors.fill: parent
-                        source: "qrc:/image/navigation_check_64.png"
+                        source: qmlAssetsPath + "navigation_check_64.png"
                     }
                 }
 
@@ -297,11 +297,11 @@ Item{
                         source: {
                             if( zone.deviceType == "RX" )
                             {
-                                return "qrc:/image/audio_64.png";
+                                return qmlAssetsPath + "audio_64.png";
                             }
                             else
                             {
-                                return "qrc:/image/volume_ok.png";
+                                return qmlAssetsPath + "volume_ok.png";
                             }
                         }
                     }
@@ -323,7 +323,7 @@ Item{
 
                         }
                         source: {
-                            return "qrc:/image/reload_64.png";
+                            return qmlAssetsPath + "reload_64.png";
                         }
                     }
                 }
@@ -387,12 +387,12 @@ Item{
                                  qsTr("It can be set device's name." )  + "" :
                                  qsTr("It can be set device's name, loopback.") + ""
                 iconSource: deviceType == "TX" ?
-                                "qrc:/image/setting_source_128.png" :
-                                "qrc:/image/setting_zone_128.png"
+                                qmlAssetsPath + "setting_source_128.png" :
+                                qmlAssetsPath + "setting_zone_128.png"
 
 
                 volumeSliderWidth: 500
-                volume: zone.rxVolume
+                volume: Number(zone.rxVolume)
                 name: zone.name
 
                 subscription: zone.rxSubscription

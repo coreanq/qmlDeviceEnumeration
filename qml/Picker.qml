@@ -22,7 +22,7 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         height: parent.height
         width: backImgWidth
-        source: "qrc:/image/picker/double_picker_background.svg"
+        source: qmlAssetsPath + "picker/double_picker_background.svg"
 
 
         Row {
@@ -86,6 +86,7 @@ Item {
                 }
 
                 MouseArea {
+            visible: false
                     id: leftTopArea
                     x: 57
                     y: 0
@@ -97,6 +98,7 @@ Item {
 
                 }
                 MouseArea {
+            visible: false
                     id: leftBottomArea
                     x: 57
                     y: 82
@@ -131,6 +133,7 @@ Item {
                 }
 
                 MouseArea {
+            visible: false
                     id: rightTopArea
                     x: 0
                     y: 0
@@ -142,6 +145,7 @@ Item {
 
                 }
                 MouseArea {
+            visible: false
                     id: rightBottomArea
                     x: 0
                     y: 82
@@ -157,7 +161,7 @@ Item {
         Image {
             id: reflex
             anchors.fill: parent
-            source: "qrc:/image/picker/double_picker_reflex.svg"
+            source: qmlAssetsPath + "picker/double_picker_reflex.svg"
         }
     }
 

@@ -17,6 +17,7 @@ Item {
 
     // 배경이 클릭되지 않도록 처리
     MouseArea{
+            visible: false
         anchors.fill: parent
     }
 
@@ -71,10 +72,11 @@ Item {
         anchors.topMargin: 20
         anchors.right: parent.right
         anchors.rightMargin: 40
-        source: "qrc:/image/setting_close_64.png"
+        source: qmlAssetsPath + "setting_close_64.png"
 
         MouseArea{
             anchors.fill:parent
+            visible: false
             onClicked:{
                 groupSettingPage.btnCloseClicked();
             }
@@ -151,7 +153,7 @@ Item {
 
                 horizontalTileMode: BorderImage.Stretch
                 verticalTileMode: BorderImage.Stretch
-                source: "qrc:/image/textbox.svg"
+                source: qmlAssetsPath + "textbox.svg"
 
                 Item {
                      anchors.fill: parent
@@ -168,6 +170,7 @@ Item {
                          text: groupSettingPage.name
                          MouseArea{
                              anchors.fill: parent
+            visible: false
                              onClicked:{
                                  txtGroupNameInput.forceActiveFocus();
                                  cppInterface.showVirtualKeyboard(true);
@@ -223,7 +226,7 @@ Item {
 
                 horizontalTileMode: BorderImage.Stretch
                 verticalTileMode: BorderImage.Stretch
-                source: "qrc:/image/textbox.svg"
+                source: qmlAssetsPath + "textbox.svg"
 
                 Item {
                      anchors.fill: parent
