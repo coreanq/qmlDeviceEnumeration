@@ -135,7 +135,6 @@ Item {
         * This area makes it dragable
         */
         MouseArea {
-            visible: false
             anchors.fill: parent
             drag {
                 target: parent

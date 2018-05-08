@@ -28,7 +28,7 @@ Flipable {
 
 
     state: "front"
-    MouseArea { visible: false; anchors.fill: parent; onClicked: logo.flipped = !logo.flipped }
+    MouseArea { anchors.fill: parent; onClicked: logo.flipped = !logo.flipped }
 
     transform: Rotation {
         id: rotation; origin.x: logo.width / 2; origin.y: logo.height / 2

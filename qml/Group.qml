@@ -44,7 +44,6 @@ Item{
 
             MouseArea {
                 anchors.fill: parent;
-            visible: false
                 onClicked: {
                     if( editMode == true ){
                         group.flipped = !group.flipped;

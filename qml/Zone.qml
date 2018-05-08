@@ -431,7 +431,7 @@ Item{
                 name: "back"; when:zone.flipped
                 ParentChange{
                     target: flipableZone;
-                    parent: setupContainer;
+                    parent: controlWnd;
                     width: parent.width
                     height: parent.height
                     x: 0
@@ -451,7 +451,7 @@ Item{
                 to: "back"
                 reversible: true
                 ParentAnimation{
-                    via: setupContainer
+                    via: controlWnd
                     PropertyAnimation{ target: flipableZone; properties: "x,y,width,height,cellAngle"; duration: 500}
                 }
 

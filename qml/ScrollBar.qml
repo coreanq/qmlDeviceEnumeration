@@ -25,7 +25,6 @@ BorderImage {
             smooth: true
 
             MouseArea {
-            visible: false
                 anchors.fill: parent
                 onPressed: {
                     timer.scrollAmount = -20
@@ -63,7 +62,6 @@ BorderImage {
             width: parent.width
 
             MouseArea {
-            visible: false
                 anchors.fill: parent
                 onPressed: {
                     timer.scrollAmount = target.height * (mouseY < slider.y ? -1 : 1)	// scroll by a page
@@ -86,7 +84,6 @@ BorderImage {
 
                 MouseArea {
                     anchors.fill: parent
-            visible: false
                     drag.target: parent
                     drag.axis: Drag.YAxis
                     drag.minimumY: 0

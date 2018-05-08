@@ -55,7 +55,6 @@ Item {
 
     MouseArea {
         anchors.fill: parent
-            visible: false
         onClicked: {
             if (!container.disabled)
                 container.clicked()
@@ -63,10 +62,13 @@ Item {
         onPressed: {
             if (!container.disabled)
                 container.state = "Pressed"
+            container.scale = 1.3
+
         }
         onReleased: {
             if (!container.disabled)
                 container.state = ""
+            container.scale = 1
         }
     }
 

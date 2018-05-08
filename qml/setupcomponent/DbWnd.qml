@@ -51,7 +51,6 @@ Item {
 
                  MouseArea{
                      anchors.fill: parent
-            visible: false
                      onClicked:{
 //                         console.debug("mouse area clicked" );
                          txt.forceActiveFocus();
@@ -194,7 +193,6 @@ Item {
                     source: "../" + qmlAssetsPath + "refresh_64.png"
                     MouseArea{
                         anchors.fill:parent
-            visible: false
                         onClicked:{
                             cppInterface.refreshNetworkInterfaces();
                         }

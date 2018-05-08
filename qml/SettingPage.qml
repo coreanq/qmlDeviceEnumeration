@@ -78,7 +78,6 @@ Item {
         source: qmlAssetsPath + "setting_close_64.png"
 
         MouseArea{
-            visible: false
             anchors.fill:parent
             onClicked:{
                 settingPage.btnCloseClicked();

@@ -19,7 +19,6 @@ Item {
     width: parent.width
 
     MouseArea {
-            visible: false
         anchors.fill: parent;
         onClicked: {
             // ip 가 존재해야만 클릭 할 수 잇도록 수정.

@@ -31,7 +31,6 @@ Item {
     // 배경이 클릭되지 않도록 처리
     MouseArea{
         anchors.fill: parent
-            visible: false
     }
 
     onFlippedChanged: {
@@ -91,7 +90,6 @@ Item {
 
         MouseArea{
             anchors.fill:parent
-            visible: false
             onClicked:{
                 zoneSettingPage.btnCloseClicked();
             }
@@ -116,7 +114,6 @@ Item {
 
         MouseArea{
             anchors.fill: parent
-            visible: false
             onPressed:{
                 imgRefresh.scale = 1.5;
                 cppInterface.onBtnCheckDeviceInfoClicked();
@@ -329,7 +326,6 @@ Item {
 
                          MouseArea{
                              anchors.fill: parent
-            visible: false
                              onClicked:{
                                  txtDanteNameInput.forceActiveFocus();
                                  cppInterface.showVirtualKeyboard(true);

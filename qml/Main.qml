@@ -8,8 +8,8 @@ Window{
     id: mainWnd
     // zone, source, txRegisteredzone 의 크기를 결정하기 위함.
     visible: true
-    width: 1024
-    height: 640
+    width: 1280
+    height: 800
 
     property int pressDelay : 50 // flick 와 click 동작을 모두 구현하기 위함
     property int currentCellWidth: 240

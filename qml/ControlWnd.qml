@@ -164,7 +164,6 @@ Item {
 
        MouseArea{
            anchors.fill: parent
-            visible: false
        }
 
        Row {

@@ -17,7 +17,6 @@ Item {
 
     // 배경이 클릭되지 않도록 처리
     MouseArea{
-            visible: false
         anchors.fill: parent
     }
 
@@ -76,7 +75,6 @@ Item {
 
         MouseArea{
             anchors.fill:parent
-            visible: false
             onClicked:{
                 groupSettingPage.btnCloseClicked();
             }
@@ -170,7 +168,6 @@ Item {
                          text: groupSettingPage.name
                          MouseArea{
                              anchors.fill: parent
-            visible: false
                              onClicked:{
                                  txtGroupNameInput.forceActiveFocus();
                                  cppInterface.showVirtualKeyboard(true);

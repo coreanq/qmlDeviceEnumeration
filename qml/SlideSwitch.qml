@@ -73,7 +73,6 @@ Item {
 
     // For hover purpose
     MouseArea {
-            visible: false
         anchors.fill: background
         hoverEnabled: true
 
@@ -96,7 +95,6 @@ Item {
         anchors.verticalCenter: background.verticalCenter
 
         MouseArea {
-            visible: false
             anchors.fill: parent
             drag.target: parent
             drag.axis: Drag.XAxis

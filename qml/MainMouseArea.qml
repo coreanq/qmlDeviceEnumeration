@@ -1,9 +1,8 @@
-import QtQuick 1.1
+import QtQuick 2.9
 
 MouseArea{
 
     id: mainMouseArea
-    visible: false
 
     property bool enabled: true
     property string flickDirection

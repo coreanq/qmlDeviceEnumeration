@@ -13,7 +13,7 @@ Item {
     property int maximumWidth : 240
     property double scale : 1
     property alias accessSetupPanelCoverId : setupPanelCover
-    property alias setupCotainer : setupWnd.setupCotainer
+    property alias setupContainer : setupContainer
 
     PinchArea {
         id: pinchArea
@@ -100,7 +100,6 @@ Item {
     MouseArea{
         id: setupPanelCover
 
-        visible: false
         anchors.fill: parent
         z: columnContainer.z + 1
     }
