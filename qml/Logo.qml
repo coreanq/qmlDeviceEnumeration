@@ -16,13 +16,17 @@ Flipable {
 
     front: Image {
         id: imgCona;
+        clip: true
+        width: 250
         fillMode: Image.PreserveAspectFit
-        source: qmlAssetsPath + "logo_interm_128.png";
+        source: qmlAssetsPath + "logo_128.png";
         smooth: true
     }
     back: Image {
         fillMode: Image.PreserveAspectFit
-        source: qmlAssetsPath + "logo_interm_128.png";
+        width: 250
+        clip:true
+        source: qmlAssetsPath + "logo_128.png";
         smooth: true
     }
 

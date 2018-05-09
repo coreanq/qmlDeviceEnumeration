@@ -24,8 +24,6 @@
         <file>image/dn-arrow.png</file>
         <file>image/folder_music_64.png</file>
         <file>image/folder_music_256.png</file>
-        <file>image/logo_cona_128.png</file>
-        <file>image/logo_interm_128.png</file>
         <file>image/main_title.ico</file>
         <file>image/navigation_check_64.png</file>
         <file>image/navigation_control_64.png</file>
@@ -84,5 +82,6 @@
         <file>image/svgbutton/MetallicBrush/hovered.svg</file>
         <file>image/svgbutton/MetallicBrush/normal.svg</file>
         <file>image/svgbutton/MetallicBrush/pressed.svg</file>
+        <file>image/logo_128.png</file>
     </qresource>
 </RCC>

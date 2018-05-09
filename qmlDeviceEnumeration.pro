@@ -1,6 +1,10 @@
 QT += quick
 CONFIG += c++11 
-#CONFIG += v-play
+CONFIG += v-play v-play-live
+# for IOS
+# configure the product's bundle identifier
+# this identifier is used for the app on iOS
+PRODUCT_IDENTIFIER = home.charles.cardview
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
@@ -20,7 +24,6 @@ Debug {
 
     assetsFolder.source = image
     DEPLOYMENTFOLDERS += assetsFolder
-    RESOURCES += resource.qrc
 }
 Release{
     RESOURCES += resource.qrc
